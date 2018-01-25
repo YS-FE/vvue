@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vvue</title>
+  </head>
+  <body>
+
+    <div id="app">
+      <h1>{{title}}</h1>
+      <p>
+        姓名:{{name}}  年龄:{{age}}
+      </p>
+      <p>
+        <input type="text" v-model="message">
+        <strong>{{message}}</strong>
+      </p>
+      <p><strong>{{message2}}</strong></p>
+    </div>
+
+    <script src="./proxy.js"></script>
+    <script src="./computed.js"></script>
+    <script src="./Watcher.js"></script>
+    <script src="./observe.js"></script>
+    <script src="./Compile.js"></script>
+    <script src="./Vvue.js"></script>
+
+    <script type="text/javascript">
+      new Vvue({
+        el: '#app',
+        data: {
+          title: 'VVUE',
+          name: 'lisi',
+          age: 20,
+          message: '双向绑定测试'
+        },
+        computed: {
+          message2(){
+            return "<<<<<<<<" + this.message + ">>>>>>>>>"
+          }
+        }
+      })
+    </script>
+
+  </body>
+</html>
